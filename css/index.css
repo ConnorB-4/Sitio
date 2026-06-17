@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 @font-face {
     font-family: 'Manrope';
     src: url('../fonts/Manrope-SemiBold.ttf') format('truetype');
@@ -20,13 +21,43 @@
 }
 
 body {
-    font-family: 'Manrope', sans-serif;
+    font-family: "Audiowide", sans-serif;
     margin: 0;
-    background-color: #1c1c1c;
+    background-color: #303030;
     color: #f0f0f0;
     overflow-x: hidden;
 }
 
+.carrousel{
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: #303030;
+
+}
+.carousel-wrapper{
+    height: 90vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#carousel-content{
+    text-align: center;
+    font-size: xx-large;
+    font-family: "Audiowide", sans-serif;
+}
+#carousel-content-description{
+    text-align: center;
+    font-size: medium;
+    max-width: 900px;
+    margin-top: 20px;
+    font-family: "Audiowide", sans-serif;
+    font-size: 13px;
+}
 
 body::-webkit-scrollbar {
     width: 0px;
@@ -38,22 +69,73 @@ html {
     -ms-overflow-style: none;
 }
 
-
 .hidden {
     display: none !important;
 }
 
 header.site-header {
     width: 100%;
-    background: #2c2c2c;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 32px 0 32px;
+    padding: 10px;
     min-height: 80px;
-    position: relative;
+    position: fixed;
+    top: 0;
     z-index: 1100;
     box-sizing: border-box;
+}
+#phone-menu {
+    /* Keep it rendered but position it completely off-screen to the left */
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(10px);
+    position: fixed;   
+    top: 0;            
+    left: 0; /* Anchored to the left side */
+    z-index: 1006;     
+
+    /* Move the menu 100% of its own width to the left (hidden) */
+    transform: translateX(-100%); 
+    
+    /* Control the speed and feel of the slide animation */
+    transition: transform 0.4s ease-in-out; 
+}
+
+/* When JS adds this class, slide it back to its original position */
+#phone-menu.menu-open {
+    transform: translateX(0);
+}
+
+#phone-menu button {
+    color: white;
+    background: #333;
+    border: 1px solid #fff;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+}
+.footer p{
+    text-align: center;
+    font-size: 15px;
+    color: #bdbdbd;
+    font-family: "Audiowide", sans-serif;
 }
 
 .header-left {
@@ -87,10 +169,6 @@ header.site-header {
     display: block;
 }
 
-
-
-
-
 .searchbar-container {
     width: 100%;
     max-width: 500px;
@@ -112,7 +190,7 @@ header.site-header {
     font-size: 1em;
     width: 400px;
     max-width: 90vw;
-    font-family: 'Manrope Light', 'Manrope', sans-serif;
+    font-family: "Audiowide", sans-serif;
     outline: none;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
     transition: border-color 0.2s, box-shadow 0.2s;
@@ -127,7 +205,7 @@ header.site-header {
 }
 
 #searchBar::placeholder {
-    font-family: 'Manrope Light', 'Manrope', sans-serif;
+    font-family: "Audiowide", sans-serif;
     font-weight: 300;
     color: #bdbdbd;
 }
@@ -136,8 +214,13 @@ header.site-header {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 15px 10px 10px 10px;
+    padding: 15px;
     gap: 10px;
+    background-color: rgb(54, 54, 54);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    margin-top: -20px;
+    z-index: 1000;
 }
 
 .game-item {
@@ -159,7 +242,7 @@ header.site-header {
     background: linear-gradient(to bottom, #1a1a1a, #111111 40%, #0a0a0a);
     border-radius: 8px;
     text-align: center;
-    width: 120px;
+    width: 200px;
     overflow: visible;
     text-decoration: none;
     transition: transform 0.2s ease-in-out, box-shadow 0.25s ease-out;
@@ -197,6 +280,7 @@ header.site-header {
 .game-item p {
     margin: 10px 0;
     font-size: 0.9em;
+    font-family: "Audiowide", sans-serif;
     color: #fff;
     text-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
     padding: 0 5px;
@@ -285,6 +369,7 @@ header.site-header {
     margin-bottom: 15px;
     font-size: 2em;
     font-weight: 600;
+    font-family: "Audiowide", sans-serif;
     color: #ffffff;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     position: relative;
@@ -308,12 +393,14 @@ header.site-header {
     padding: 0;
     margin-top: 15px;
     margin-bottom: 0;
+    font-family: "Audiowide", sans-serif;
 }
 
 
 #modalDownloadLinks li {
     margin-bottom: 7px;
     position: relative;
+    font-family: "Audiowide", sans-serif;
     transition: margin-bottom 0.4s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
@@ -334,7 +421,7 @@ header.site-header {
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
     position: relative;
     overflow: hidden;
-    font-family: 'Manrope Regular', 'Manrope', sans-serif;
+    font-family: "Audiowide", sans-serif;
 }
 
 #modalDownloadLinks a::before {
@@ -573,7 +660,7 @@ header.site-header {
     border-radius: 8px;
     cursor: pointer;
     font-size: 0.9em;
-    font-family: 'Manrope', sans-serif;
+    font-family: "Audiowide", sans-serif;
     transition: all 0.3s ease;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
@@ -612,7 +699,7 @@ header.site-header {
     position: relative;
     overflow: hidden;
     border: none !important;
-    font-family: 'Manrope Regular', 'Manrope', sans-serif;
+    font-family: "Audiowide", sans-serif;
     cursor: pointer;
     width: 100% !important;
     margin-bottom: 8px !important;
@@ -691,41 +778,71 @@ body.modal-blur-active>*:not(#downloadModal):not(#detailsModal):not(#partsModal)
     transform: scale(1.15);
     filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
 }
+.hamburger{
+    display: none;
+}
+
+/* From Uiverse.io by JulanDeAlb */ 
+.hamburger {
+  cursor: pointer;
+}
+
+.hamburger input {
+  display: none;
+}
+
+.hamburger svg {
+  /* The size of the SVG defines the overall size */
+  height: 3em;
+  /* Define the transition for transforming the SVG */
+  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+  fill: none;
+  stroke: white;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+  /* Define the transition for transforming the Stroke */
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+              stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+  stroke-dasharray: 12 63;
+}
+
+.hamburger input:checked + svg {
+  transform: rotate(-45deg);
+}
+
+.hamburger input:checked + svg .line-top-bottom {
+  stroke-dasharray: 20 300;
+  stroke-dashoffset: -32.42;
+}
 
 
 @media (max-width: 768px) {
     header.site-header {
-        flex-direction: column;
-        padding: 16px;
-        min-height: auto;
-    }
-
-    .header-left,
-    .header-right {
-        width: 100%;
+        flex-direction: row;
         justify-content: space-between;
-    }
-
-    .header-center {
         width: 100%;
-        order: 2;
-        padding: 16px 0 0 0;
+        padding: 10px 20px;
     }
-
-    .header-left {
-        order: 1;
+   
+   .hamburger {
+        display: block;
+        position: absolute;
+        
+    } 
+    
+    .filter-group{
+       visibility: hidden;
     }
-
-    .header-right {
-        order: 1;
-        flex-grow: 1;
-        justify-content: flex-end;
-    }
-
-
-
+    
     #searchBar {
-        width: 100%;
+       width: 100%;
     }
 
     .game-item {
@@ -773,7 +890,7 @@ body.modal-blur-active>*:not(#downloadModal):not(#detailsModal):not(#partsModal)
     color: #bdbdbd;
     padding: 6px 12px;
     border-radius: 8px;
-    font-family: 'Manrope', sans-serif;
+   font-family: "Audiowide", sans-serif;
     font-size: 0.9em;
     font-weight: 500;
     cursor: pointer;
@@ -830,7 +947,7 @@ body.modal-blur-active>*:not(#downloadModal):not(#detailsModal):not(#partsModal)
     color: #f0f0f0;
     padding: 8px 16px;
     border-radius: 8px;
-    font-family: 'Manrope', sans-serif;
+    font-family: "Audiowide", sans-serif;
     font-size: 0.95em;
     font-weight: 500;
     cursor: pointer;
@@ -893,6 +1010,7 @@ body.modal-blur-active>*:not(#downloadModal):not(#detailsModal):not(#partsModal)
     color: #888;
     letter-spacing: 1px;
     font-weight: 600;
+    font-family: "Audiowide", sans-serif;
 }
 
 .sort-buttons {
@@ -908,7 +1026,7 @@ body.modal-blur-active>*:not(#downloadModal):not(#detailsModal):not(#partsModal)
     padding: 8px;
     border-radius: 6px;
     cursor: pointer;
-    font-family: 'Manrope', sans-serif;
+    font-family: "Audiowide", sans-serif;
     font-size: 0.9em;
     transition: all 0.2s ease;
 }
@@ -928,28 +1046,20 @@ body.modal-blur-active>*:not(#downloadModal):not(#detailsModal):not(#partsModal)
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 6px;
+    font-family: "Audiowide", sans-serif;
 }
 
 .filter-menu .alphabet-btn {
     padding: 6px 0;
     font-size: 0.9em;
     width: 100%;
+    font-family: "Audiowide", sans-serif;
 }
 
 @media (max-width: 768px) {
     .filter-wrapper {
         justify-content: center;
-    }
-
-    .filter-menu {
-        right: 50%;
-        transform: translateX(50%) translateY(-10px);
-        width: 90%;
-        max-width: 320px;
-    }
-
-    .filter-menu.is-open {
-        transform: translateX(50%) translateY(0);
+        z-index: 3000;
     }
 }
 
@@ -982,7 +1092,7 @@ body.modal-blur-active>*:not(#downloadModal):not(#detailsModal):not(#partsModal)
     padding: 10px 14px;
     border-radius: 8px;
     cursor: pointer;
-    font-family: 'Manrope', sans-serif;
+    font-family: "Audiowide", sans-serif;
     font-size: 0.95em;
     text-align: left;
     transition: all 0.2s ease;
@@ -1010,22 +1120,7 @@ body.modal-blur-active>*:not(#downloadModal):not(#detailsModal):not(#partsModal)
     content: '✓';
     font-weight: bold;
 }
-
-@media (max-width: 768px) {
-    .filter-wrapper {
-        justify-content: center;
-    }
-
-    .filter-menu {
-        right: auto;
-        left: 50%;
-        transform: translateX(-50%) translateY(-10px);
-    }
-
-    .filter-menu.is-open {
-        transform: translateX(-50%) translateY(0);
-    }
-}.filter-wrapper {
+.filter-wrapper {
     display: flex;
     justify-content: flex-end;
     gap: 12px;
@@ -1043,4 +1138,94 @@ body.modal-blur-active>*:not(#downloadModal):not(#detailsModal):not(#partsModal)
 .filter-menu {
     right: 0;
     margin-top: 5px;
+}
+/* From Uiverse.io by gharsh11032000 */ 
+.animated-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 16px 36px;
+  border: 4px solid;
+  border-color: transparent;
+  font-size: 16px;
+  background-color: inherit;
+  border-radius: 100px;
+  font-weight: 600;
+  color: greenyellow;
+  box-shadow: 0 0 0 2px greenyellow;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  
+}
+
+.animated-button svg {
+  position: absolute;
+  width: 24px;
+  fill: greenyellow;
+  z-index: 9;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .arr-1 {
+  right: 16px;
+}
+
+.animated-button .arr-2 {
+  left: -25%;
+}
+
+.animated-button .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: greenyellow;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .text {
+  position: relative;
+  z-index: 1;
+  transform: translateX(-12px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  font-family: "Audiowide", sans-serif;
+}
+
+.animated-button:hover {
+  box-shadow: 0 0 0 12px transparent;
+  color: #212121;
+  border-radius: 12px;
+}
+
+.animated-button:hover .arr-1 {
+  right: -25%;
+}
+
+.animated-button:hover .arr-2 {
+  left: 16px;
+}
+
+.animated-button:hover .text {
+  transform: translateX(12px);
+}
+
+.animated-button:hover svg {
+  fill: #212121;
+}
+
+.animated-button:active {
+  scale: 0.95;
+  box-shadow: 0 0 0 4px greenyellow;
+}
+
+.animated-button:hover .circle {
+  width: 220px;
+  height: 220px;
+  opacity: 1;
 }
